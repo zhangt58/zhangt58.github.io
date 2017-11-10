@@ -21,6 +21,7 @@ Python, I will add more into this list.
     * [Source code](https://github.com/archman/felapps){:target="_blank"}
     * [Documentation](https://archman.github.io/felapps/){:target="_blank"}
     * [PyPI](https://pypi.python.org/pypi/felapps){:target="_blank"}
+
 - ``beamline``
 
     > ``beamline`` is a Python package created for accelerator (RF LINAC)
@@ -31,12 +32,14 @@ Python, I will add more into this list.
     * [Source code](https://github.com/archman/beamline){:target="_blank"}
     * [Documentation](https://archman.github.io/beamline/){:target="_blank"}
     * [PyPI](https://pypi.python.org/pypi/beamline){:target="_blank"}
+
 - ``pydraw``
 
     > ``pydraw`` is a Python application (GUI) to illustrate the basic 
     > features of Python and wxPython.
 
     * [Source code](https://github.com/archman/pydraw){:target="_blank"}
+
 - ``pelican``
 
     > ``pelican`` is a C++ application (CLI) to simulate the free-electron
@@ -44,6 +47,7 @@ Python, I will add more into this list.
     > interaction between electron beam and radiation itself.
 
     * [Source code](https://github.com/archman/pelican){:target="_blank"}
+
 - ``vFEL``
 
     > EPICS soft-ioc (C/C++) for virtual FEL machine 
@@ -52,6 +56,7 @@ Python, I will add more into this list.
     > so the two packages should be used together.
 
     * [Source code](https://github.com/archman/vFEL){:target="_blank"}
+
 - ``modu``
 
     > C++ application (CLI) to simulate the interaction between electron
@@ -60,6 +65,7 @@ Python, I will add more into this list.
     > by ``Elegant`` or ``Genesis 1.3``.
 
     * [Source code](https://github.com/archman/modu){:target="_blank"}
+
 - ``pyrpn``
 
     > RPN solver written by Python, RPN is brief for 

@@ -6,13 +6,15 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Tong's page
-email: your-email@domain.com
+title: Personal Page
+email: warriorlance@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-#baseurl: "" # the subpath of your site, e.g. /blog
+  I'm a Controls Physicist in the research field of accelerator. I have PhD
+  on free-electron laser (Doctor of Engineering), I'm skilled at high-level
+  controls. This site keeps my notes and geekstuff related to my work, like
+  projects building with Python, C/C++, MATLAB, etc., or lessons learnt,
+  memos/notes, ... to keep myself moving forward.
+baseurl: # the subpath of your site, e.g. /blog
 #url: "" # the base hostname & protocol for your site
 github_username:  archman
 

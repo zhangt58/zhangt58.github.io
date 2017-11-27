@@ -16,8 +16,8 @@ resume: true
 resume-external: true
 resume-url: http://127.0.0.1:4000/cv
 
-url: http://127.0.0.1:4000
-# your url: http://USERNAME.github.io
+# url: http://127.0.0.1:4000
+url: https://archman.github.io
 
 permalink: /:title/
 

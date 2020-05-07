@@ -3,7 +3,7 @@ title: "Understand Singular Value Decomposition"
 layout: post
 date: 2016-11-06 15:05:40 PM EST
 author: Tong Zhang
-category: blg
+category: blog
 tag:
 - python
 - math
@@ -17,10 +17,8 @@ understanding it just a little bit, and it is interesting.
 ![svd]({{site.url}}/assets/svd_illustration.png)
 
 
-<!--
 ```python
 class Particle(object):
     def __init__(self, np):
         pass
 ```
--->

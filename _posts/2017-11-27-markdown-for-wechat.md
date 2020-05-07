@@ -5,6 +5,7 @@ layout: post
 date: 2017-11-27 09:41:38 AM EST
 author: Tong Zhang
 category: blog
+hidden: true
 tag:
 - markdown
 - wechat

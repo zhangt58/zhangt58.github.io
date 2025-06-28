@@ -16,7 +16,7 @@ resume: false
 resume-external: true
 resume-url: http://127.0.0.1:4000/cv
 
-url: https://archman.github.io
+url: https://zhangt58.github.io
 
 permalink: /:title/
 
@@ -41,7 +41,7 @@ disqus:
 # linkedin: tong-zhang-96249ab8
 # youtube: myyoutube
 # spotify: myspotify
-github: archman
+github: zhangt58
 # lastfm: mylastfm
 # stackoverflow: 1436837/tony
 # quora: userquora

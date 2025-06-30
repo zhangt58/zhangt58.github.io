@@ -14,7 +14,7 @@ to decomposite a matrix (``A``) to be multiplication of several matrices,
 i.e. ``A = S * V * D``, which is for SVD. You'll feel the beauty of math when
 understanding it just a little bit, and it is interesting.
 
-![svd]({{site.url}}/assets/svd_illustration.png)
+![svd]({{site.url}}/assets/images/svd_illustration.png)
 
 
 ```python

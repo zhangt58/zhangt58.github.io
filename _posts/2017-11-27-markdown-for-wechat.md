@@ -3,7 +3,7 @@ title: "使用Markdown便捷微信公众平台文章写作"
 subtitle: "Markdown for WeChat Official Account"
 layout: post
 date: 2017-11-27 09:41:38 AM EST
-author: Tong Zhang
+author: zhangt58
 category: blog
 hidden: true
 tag:

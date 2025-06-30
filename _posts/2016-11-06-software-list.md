@@ -2,7 +2,7 @@
 title: "List of Software"
 layout: post
 date: 2016-11-06 16:45:46 PM EST
-author: Tong Zhang
+author: zhangt58
 category: blog
 tag:
 - python

@@ -2,7 +2,7 @@
 
 # Import the theme
 # theme: jekyll-theme-chirpy
-remote_theme: zhangt58/jekyll-theme-chirpy@1bac96a8e1ae23a7a48f2b7d249bfbfd5d9bfe50
+remote_theme: zhangt58/jekyll-theme-chirpy@614b8cd
 
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,

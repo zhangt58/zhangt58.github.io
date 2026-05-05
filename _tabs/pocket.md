@@ -8,7 +8,7 @@ order: 5
 
 A curated digest of tech news and local events, automatically updated.
 
-- **HN Top 10** — daily at 8 AM
+- **[HN Top 10](/categories/#HN)** — daily digest, tagged on this site
 - **Michigan Events** — weekly on Fridays
 
 [Browse the digest →](https://tong.github.io/pocket/)

@@ -8,7 +8,7 @@ order: 5
 
 A curated digest of tech news and local events, automatically updated.
 
-- **[HN Top 10](/tags/#hacker-news)** — daily digest, tagged on this site
+- **HN Top 10** — daily digest
 - **Michigan Events** — weekly on Fridays
 
 [Browse the digest →](https://tong.github.io/pocket/)

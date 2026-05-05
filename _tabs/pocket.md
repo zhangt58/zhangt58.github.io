@@ -11,4 +11,4 @@ A curated digest of tech news and local events, automatically updated.
 - **HN Top 10** — daily digest
 - **Michigan Events** — weekly on Fridays
 
-[Browse the digest →](https://tong.github.io/pocket/)
+[Browse the digest →](https://zhangt58.github.io/pocket/)

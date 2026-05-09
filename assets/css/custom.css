@@ -207,7 +207,7 @@ div.highlight {
   position: relative;
   border-radius: 4px;
   overflow: auto;
-  margin: 0.6em 0;
+  margin: 0.4em 0;
   border: 1px solid rgba(0, 188, 212, 0.1);
 }
 
@@ -234,14 +234,14 @@ div.highlighter-rouge > table {
 pre.highlight,
 .highlight pre {
   font-size: 0.78em !important;
-  padding: 0.4em 0.8em;
+  padding: 0.25em 0.6em;
   line-height: 1.5 !important;
   margin: 0;
 }
 
 /* Language label padding */
 .code-header {
-  padding: 0.3em 0.8em;
+  padding: 0.2em 0.6em;
 }
 
 /* ==========================================================================

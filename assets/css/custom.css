@@ -185,8 +185,9 @@ tt {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  padding: 0.3em 0.5em !important;
+  padding: 0.2em 0.5em !important;
   border-bottom: 1px solid rgba(0, 188, 212, 0.2);
+  margin-bottom: 0.2em !important;
 }
 
 #toc-wrapper .panel-heading::before {
@@ -195,71 +196,70 @@ tt {
   opacity: 0.7;
 }
 
-/* TOC list */
-#toc-wrapper ul {
+/* TOC lists – strip defaults */
+#toc-wrapper .toc-list {
   list-style: none !important;
   padding-left: 0 !important;
   margin: 0 !important;
 }
 
-#toc-wrapper .toc-entry {
+#toc-wrapper .toc-list-item {
   margin: 0 !important;
 }
 
-/* TOC links – left border highlight */
-#toc a.nav-link,
-#toc .toc-link {
+/* TOC links */
+#toc-wrapper .toc-link {
   display: block;
-  padding: 0.15em 0.5em !important;
+  padding: 0.1em 0.5em !important;
   font-family: 'JetBrains Mono', monospace !important;
   font-size: 0.68rem !important;
-  line-height: 1.35 !important;
+  font-weight: 400;
+  line-height: 1.4 !important;
   text-decoration: none !important;
+  text-transform: none;
   border-left: 2px solid transparent !important;
-  transition: border-color 0.15s ease, color 0.15s ease;
+  transition: border-color 0.15s ease, color 0.15s ease, padding-left 0.15s ease;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-#toc a.nav-link:hover,
-#toc .toc-link:hover {
+#toc-wrapper .toc-link:hover {
   color: var(--accent-color) !important;
   border-left-color: var(--accent-color) !important;
   background: transparent !important;
+  padding-left: 0.7em !important;
 }
 
-/* Active TOC link */
-#toc .active > a.nav-link,
-#toc .toc-entry.active > a.nav-link,
-#toc a.nav-link.active {
+/* Active link */
+#toc-wrapper .is-active-link {
   color: var(--accent-color) !important;
   border-left-color: var(--accent-color) !important;
+  font-weight: 600;
 }
 
-/* Nested levels – indentation */
-#toc .toc-h3 > a.nav-link {
-  padding-left: 1.2em !important;
+/* Heading level sizes */
+#toc-wrapper .node-name--H2 {
+  font-size: 0.72rem !important;
+  font-weight: 600;
 }
 
-#toc .toc-h4 > a.nav-link {
-  padding-left: 1.8em !important;
-  font-size: 0.65rem !important;
+#toc-wrapper .node-name--H3 {
+  font-size: 0.68rem !important;
 }
 
-#toc .toc-h5 > a.nav-link {
-  padding-left: 2.4em !important;
-  font-size: 0.63rem !important;
+#toc-wrapper .node-name--H4 {
+  font-size: 0.64rem !important;
 }
 
-#toc .toc-h6 > a.nav-link {
-  padding-left: 3em !important;
-  font-size: 0.63rem !important;
+/* Nested indentation via margin */
+#toc-wrapper .toc-list .toc-list {
+  margin-left: 1em !important;
 }
 
-/* Nested ul indentation */
-#toc ul.children {
-  padding-left: 0 !important;
+/* Collapsible toggle */
+#toc-wrapper .toc-list.is-collapsible > .toc-list-item {
+  position: relative;
 }
 
 /* ==========================================================================

@@ -2,7 +2,7 @@
 layout: post
 title: Style Demo
 categories: [demo]
-tag: [style, demo]
+tag: demo
 ---
 
 ## H2 Heading

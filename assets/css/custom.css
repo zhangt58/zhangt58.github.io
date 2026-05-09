@@ -1,17 +1,13 @@
 /* ==========================================================================
-   Terminal / Developer Theme – custom.css for Chirpy Jekyll blog
+   Montserrat + Inter + JetBrains Mono hybrid theme – custom.css for Chirpy
    -------------------------------------------------------------------------
-   Provides a VS Code / terminal-inspired aesthetic with:
-   - JetBrains Mono monospace fonts
-   - Cyan/teal accent color palette
-   - Terminal-style code blocks
-   - Subtle sidebar styling
-   - Blog title prompt symbol animation
-   - Dark mode tuned to feel like a terminal
+   Bold geometric headings (Montserrat), clean body text (Inter),
+   monospace code/meta (JetBrains Mono). Cyan accent palette with
+   terminal-inspired dark mode.
    ========================================================================== */
 
 /* ==========================================================================
-   1. Accent color overrides (cyan / teal instead of Chirpy blue)
+   1. Accent color overrides (cyan / teal)
    ========================================================================== */
 
 :root {
@@ -32,31 +28,42 @@
 }
 
 /* ==========================================================================
-   2. Font: JetBrains Mono for headings and code
+   2. Font stack – Montserrat (headings), Inter (body), JetBrains Mono (code)
    ========================================================================== */
 
-/* Headings get monospace treatment */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
-  letter-spacing: -0.02em;
+/* Body text – clean sans-serif */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-/* Blog post titles */
+/* Headings – Montserrat bold, uppercase */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+h1 { font-weight: 900; }
+
+/* Blog post titles – Montserrat bold */
 .post-title,
 h1.post-title {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
-/* Section headers inside posts keep monospace */
+/* Section headers inside posts */
 .post-content h1,
 .post-content h2,
 .post-content h3,
 .post-content h4 {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Montserrat', sans-serif;
 }
 
-/* Code elements already inherit from theme; reinforce monospace */
+/* Code elements – JetBrains Mono */
 code,
 pre,
 kbd,
@@ -65,7 +72,7 @@ tt {
   font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace !important;
 }
 
-/* Inline code gets a subtle terminal tint */
+/* Inline code – terminal tint */
 :not(pre) > code {
   font-family: 'JetBrains Mono', monospace !important;
   font-size: 0.85em;
@@ -78,7 +85,6 @@ tt {
    3. Code blocks – terminal-inspired styling
    ========================================================================== */
 
-/* Code block container (Chirpy highlight wrapper) */
 div.highlighter-rouge,
 div.highlight {
   position: relative;
@@ -91,7 +97,6 @@ div.highlight {
     0 0 0 1px rgba(0, 188, 212, 0.05);
 }
 
-/* Code block header bar (macOS-style dots + language label) */
 div.highlighter-rouge figure.highlight,
 figure.highlight {
   margin: 0;
@@ -103,7 +108,6 @@ div.highlighter-rouge > table {
   border-collapse: separate;
 }
 
-/* Subtle green/blue tint on the code background */
 pre.highlight,
 .highlight pre,
 .highlight .hll {
@@ -111,14 +115,13 @@ pre.highlight,
   color: #c9d1d9 !important;
 }
 
-/* Line numbers column */
 .highlight .lineno {
   color: #484f58 !important;
   background-color: #0a0e14 !important;
   border-right: 1px solid #21262d;
 }
 
-/* Light mode: code blocks still feel technical */
+/* Light mode code blocks */
 :not(.dark) .highlight,
 :not(.dark) pre.highlight {
   background-color: #f6f8fa !important;
@@ -133,30 +136,29 @@ pre.highlight,
 }
 
 /* ==========================================================================
-   4. Sidebar – darker, with subtle border-right
+   4. Sidebar
    ========================================================================== */
 
 #sidebar {
   border-right: 1px solid rgba(0, 188, 212, 0.12);
 }
 
-/* Light mode sidebar */
 :not(.dark) #sidebar {
   background-color: #f8f9fb !important;
   border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-/* Dark mode sidebar – slightly deeper */
 .dark #sidebar {
   background-color: #0f1117 !important;
   border-right: 1px solid rgba(0, 188, 212, 0.08);
 }
 
-/* Sidebar title */
+/* Sidebar title – Montserrat black */
 .site-title {
-  font-family: 'JetBrains Mono', monospace !important;
-  font-weight: 700;
-  letter-spacing: -0.03em;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 /* Sidebar subtitle */
@@ -167,7 +169,15 @@ pre.highlight,
   opacity: 0.7;
 }
 
-/* Nav links in sidebar get a subtle hover accent */
+/* Nav links – Montserrat bold uppercase */
+#sidebar .nav-link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 #sidebar .nav-link:hover {
   color: var(--accent-color) !important;
 }
@@ -186,7 +196,6 @@ pre.highlight,
    5. Blog title prompt symbol + cursor animation
    ========================================================================== */
 
-/* Add a terminal prompt before the site title */
 .site-title::before {
   content: '$ ';
   color: var(--prompt-color);
@@ -196,7 +205,6 @@ pre.highlight,
   opacity: 0.9;
 }
 
-/* Blinking cursor after the site title */
 .site-title::after {
   content: '_';
   color: var(--accent-color);
@@ -215,26 +223,21 @@ pre.highlight,
    ========================================================================== */
 
 .dark {
-  /* Main background – deep dark like VS Code */
   --main-bg: #0d1117;
   --sidebar-bg: #010409;
   --card-bg: #161b22;
   --card-hovor-bg: #1c2129;
 
-  /* Text colors */
   --text-color: #c9d1d9;
   --text-muted-color: #7d8590;
   --heading-color: #e6edf3;
 
-  /* Accent in dark mode */
   --link-color: #4dd0e1;
   --link-underline-color: rgba(77, 208, 225, 0.3);
 
-  /* Borders */
   --main-border-color: #21262d;
   --sidebar-border-color: #21262d;
 
-  /* Code blocks – true terminal dark */
   --highlight-bg-color: #010409;
   --highlighter-rouge-color: #c9d1d9;
   --highlight-lineno-color: #484f58;
@@ -242,22 +245,17 @@ pre.highlight,
   --code-header-text-color: #7d8590;
   --code-header-muted-color: #21262d;
 
-  /* Inline code */
   --inline-code-bg: rgba(56, 139, 253, 0.1);
 
-  /* Tags – terminal green tint */
   --tag-border: rgba(0, 188, 212, 0.3);
   --tag-hover: rgba(0, 188, 212, 0.15);
 
-  /* Topbar */
   --topbar-bg: rgba(13, 17, 23, 0.85);
 
-  /* Button accents */
   --button-bg: #21262d;
   --btn-border-color: #30363d;
 }
 
-/* Make dark mode scrollbar feel like a terminal */
 .dark ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -281,10 +279,8 @@ pre.highlight,
    ========================================================================== */
 
 :not(.dark) {
-  /* Accent in light mode */
   --link-color: var(--accent-color-dark);
 
-  /* Tags */
   --tag-border: rgba(0, 151, 167, 0.3);
   --tag-hover: rgba(0, 188, 212, 0.1);
 }
@@ -299,23 +295,20 @@ pre.highlight,
 }
 
 /* ==========================================================================
-   8. Post-specific tweaks
+   8. Post-specific tweaks – JetBrains Mono for meta/tags
    ========================================================================== */
 
-/* Post meta info gets a subtle prompt prefix look */
 .post-meta {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.82rem;
 }
 
-/* Date prefix styling */
 .post-meta .post-date::before {
   content: '⟩ ';
   color: var(--accent-color);
   opacity: 0.7;
 }
 
-/* Tags look more like terminal tags */
 .tag {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
@@ -330,14 +323,13 @@ pre.highlight,
   color: var(--accent-color);
 }
 
-/* Category tags */
 .categories .list-group-item {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.85rem;
 }
 
 /* ==========================================================================
-   9. TOC (Table of Contents) styling
+   9. TOC styling
    ========================================================================== */
 
 #toc-wrapper {
@@ -371,20 +363,19 @@ pre.highlight,
    11. Home page post list
    ========================================================================== */
 
-/* Post list item titles */
 #post-container .post-title {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-size: 1.05rem;
 }
 
-/* Post excerpt */
 .post-list-item .post-preview p {
   font-size: 0.92rem;
   line-height: 1.6;
 }
 
 /* ==========================================================================
-   12. Footer styling
+   12. Footer
    ========================================================================== */
 
 footer.blog-footer {
@@ -417,13 +408,11 @@ footer.blog-footer {
   border-bottom: 1px solid rgba(0, 188, 212, 0.06);
 }
 
-/* Search input */
 #search-input {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.85rem;
 }
 
-/* Search button */
 .search-btn {
   color: var(--accent-color);
 }
@@ -490,7 +479,7 @@ footer.blog-footer {
 }
 
 /* ==========================================================================
-   20. KBD (keyboard) keys – terminal style
+   20. KBD keys – terminal style
    ========================================================================== */
 
 kbd {
@@ -503,7 +492,7 @@ kbd {
 }
 
 /* ==========================================================================
-   21. Hyperlinks – terminal hyperlinks style
+   21. Hyperlinks
    ========================================================================== */
 
 .post-content a {
@@ -519,7 +508,7 @@ kbd {
 }
 
 /* ==========================================================================
-   22. Page load subtle fade-in (terminal boot feel)
+   22. Page load fade-in
    ========================================================================== */
 
 #main {

@@ -15,6 +15,10 @@
   --accent-color-light: #4dd0e1;
   --accent-color-dark: #0097a7;
   --prompt-color: #4caf50;
+
+  /* Override Bootstrap/Chirpy font size variables */
+  --bs-body-font-size: 0.88rem;
+  --bs-body-line-height: 1.55;
 }
 
 /* ==========================================================================
@@ -23,8 +27,6 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-  font-size: 0.88rem !important;
-  line-height: 1.55 !important;
 }
 
 /* Headings – Montserrat bold uppercase */
@@ -45,7 +47,7 @@ h1.post-title {
   font-weight: 700;
   text-transform: none;
   letter-spacing: normal;
-  font-size: 1.05rem;
+  font-size: 1rem !important;
 }
 
 /* Code – JetBrains Mono everywhere */
@@ -91,7 +93,6 @@ tt {
 #sidebar .nav-link {
   font-family: 'Montserrat', sans-serif !important;
   font-weight: 700;
-  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 0.35em 0 !important;
@@ -241,18 +242,11 @@ pre.highlight,
 #post-container .post-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 0.92rem;
-}
-
-.post-list-item .post-preview p {
-  font-size: 0.82rem;
-  line-height: 1.45;
-  margin-bottom: 0.3em;
 }
 
 /* Post card spacing */
 .post-list-item {
-  padding: 1.2em 0 !important;
+  padding: 1em 0 !important;
 }
 
 /* ==========================================================================
@@ -377,21 +371,23 @@ kbd {
    18. Compact spacing adjustments
    ========================================================================== */
 
+/* Body text in posts */
+article.post-content,
 .post-content {
-  font-size: 0.88rem;
-  line-height: 1.55;
+  font-size: 0.88rem !important;
+  line-height: 1.55 !important;
 }
 
 .post-content h2 {
   margin-top: 1.5em;
   margin-bottom: 0.6em;
-  font-size: 1.15rem;
+  font-size: 1.05rem !important;
 }
 
 .post-content h3 {
   margin-top: 1.2em;
   margin-bottom: 0.5em;
-  font-size: 1rem;
+  font-size: 0.95rem !important;
 }
 
 .post-content p {
@@ -407,6 +403,14 @@ kbd {
 .post-content ul li,
 .post-content ol li {
   margin-bottom: 0.25em;
+  font-size: 0.85rem !important;
+}
+
+/* Home page post previews */
+.post-list-item .post-preview p {
+  font-size: 0.82rem !important;
+  line-height: 1.45;
+  margin-bottom: 0.3em;
 }
 
 /* ==========================================================================

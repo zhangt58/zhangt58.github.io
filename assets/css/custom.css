@@ -206,7 +206,7 @@ div.highlighter-rouge,
 div.highlight {
   position: relative;
   border-radius: 4px;
-  overflow: hidden;
+  overflow: auto;
   margin: 0.6em 0;
   border: 1px solid rgba(0, 188, 212, 0.1);
 }

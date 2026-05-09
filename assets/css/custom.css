@@ -1,9 +1,8 @@
 /* ==========================================================================
-   Montserrat + Inter + JetBrains Mono hybrid theme – custom.css for Chirpy
+   Hybrid theme – custom.css for Chirpy Jekyll blog
    -------------------------------------------------------------------------
-   Bold geometric headings (Montserrat), clean body text (Inter),
-   monospace code/meta (JetBrains Mono). Cyan accent palette with
-   terminal-inspired dark mode.
+   Montserrat (headings/nav), Inter (body), JetBrains Mono (code/meta).
+   Cyan accent palette, terminal-inspired dark mode.
    ========================================================================== */
 
 /* ==========================================================================
@@ -14,90 +13,76 @@
   --accent-color: #00bcd4;
   --accent-color-light: #4dd0e1;
   --accent-color-dark: #0097a7;
-  --terminal-green: #4caf50;
-  --terminal-green-dim: #2e7d32;
-  --terminal-cyan: #26c6da;
-  --terminal-cyan-dim: #00838f;
   --prompt-color: #4caf50;
 }
 
-/* Override Chirpy's link color with our accent */
 :root {
   --link-color: var(--accent-color);
   --link-underline-color: rgba(0, 188, 212, 0.4);
 }
 
 /* ==========================================================================
-   2. Font stack – Montserrat (headings), Inter (body), JetBrains Mono (code)
+   2. Font stack
    ========================================================================== */
 
-/* Body text – clean sans-serif */
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-size: 0.92rem !important;
 }
 
-/* Headings – Montserrat bold, uppercase */
+/* Headings – Montserrat bold uppercase */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.02em;
+  line-height: 1.3 !important;
 }
 
 h1 { font-weight: 900; }
 
-/* Blog post titles – Montserrat bold */
+/* Post titles – Montserrat bold (no uppercase) */
 .post-title,
 h1.post-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
   font-weight: 700;
   text-transform: none;
   letter-spacing: normal;
 }
 
-/* Section headers inside posts */
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.post-content h4 {
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* Code elements – JetBrains Mono */
+/* Code – JetBrains Mono everywhere */
 code,
 pre,
+pre code,
+.highlight code,
 kbd,
 samp,
 tt {
-  font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace !important;
+  font-family: 'JetBrains Mono', monospace !important;
 }
 
-/* Inline code – terminal tint */
+/* Inline code */
 :not(pre) > code {
-  font-family: 'JetBrains Mono', monospace !important;
-  font-size: 0.85em;
+  font-size: 0.82em;
   padding: 0.15em 0.4em;
   border-radius: 4px;
   border: 1px solid rgba(0, 188, 212, 0.15);
 }
 
 /* ==========================================================================
-   3. Code blocks – terminal-inspired styling
+   3. Code blocks – unified JetBrains Mono, light/dark adaptive
    ========================================================================== */
 
 div.highlighter-rouge,
 div.highlight {
   position: relative;
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
-  margin: 1.5em 0;
-  border: 1px solid rgba(0, 188, 212, 0.15);
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(0, 188, 212, 0.05);
+  margin: 1em 0;
+  border: 1px solid rgba(0, 188, 212, 0.12);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-div.highlighter-rouge figure.highlight,
 figure.highlight {
   margin: 0;
 }
@@ -108,47 +93,44 @@ div.highlighter-rouge > table {
   border-collapse: separate;
 }
 
-pre.highlight,
-.highlight pre,
-.highlight .hll {
+/* Dark mode code blocks */
+html.dark pre.highlight,
+html.dark .highlight pre,
+html.dark .highlight .hll {
   background-color: #0d1117 !important;
   color: #c9d1d9 !important;
 }
 
-.highlight .lineno {
+html.dark .highlight .lineno {
   color: #484f58 !important;
   background-color: #0a0e14 !important;
   border-right: 1px solid #21262d;
 }
 
 /* Light mode code blocks */
-:not(.dark) .highlight,
-:not(.dark) pre.highlight {
+html:not(.dark) pre.highlight,
+html:not(.dark) .highlight pre,
+html:not(.dark) .highlight .hll {
   background-color: #f6f8fa !important;
   color: #1f2328 !important;
-  border-color: rgba(0, 188, 212, 0.2) !important;
 }
 
-:not(.dark) .highlight .lineno {
+html:not(.dark) .highlight .lineno {
   color: #9e9e9e !important;
   background-color: #f0f0f3 !important;
-  border-right-color: #e1e4e8 !important;
+  border-right: 1px solid #e1e4e8;
 }
 
 /* ==========================================================================
    4. Sidebar
    ========================================================================== */
 
-#sidebar {
-  border-right: 1px solid rgba(0, 188, 212, 0.12);
-}
-
-:not(.dark) #sidebar {
+html:not(.dark) #sidebar {
   background-color: #f8f9fb !important;
   border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.dark #sidebar {
+html.dark #sidebar {
   background-color: #0f1117 !important;
   border-right: 1px solid rgba(0, 188, 212, 0.08);
 }
@@ -165,17 +147,18 @@ pre.highlight,
 .site-subtitle {
   font-family: 'JetBrains Mono', monospace !important;
   font-style: normal;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   opacity: 0.7;
 }
 
 /* Nav links – Montserrat bold uppercase */
 #sidebar .nav-link {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif !important;
   font-weight: 700;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  padding: 0.4em 0 !important;
 }
 
 #sidebar .nav-link:hover {
@@ -187,13 +170,12 @@ pre.highlight,
   background: rgba(0, 188, 212, 0.08);
 }
 
-/* Sidebar bottom icons */
 .sidebar-bottom .btn-link {
   color: var(--accent-color-dark);
 }
 
 /* ==========================================================================
-   5. Blog title prompt symbol + cursor animation
+   5. Site title prompt + cursor
    ========================================================================== */
 
 .site-title::before {
@@ -219,58 +201,50 @@ pre.highlight,
 }
 
 /* ==========================================================================
-   6. Dark mode – VS Code / terminal experience
+   6. Dark mode – Chirpy html.dark pattern
    ========================================================================== */
 
-.dark {
+html.dark {
   --main-bg: #0d1117;
   --sidebar-bg: #010409;
   --card-bg: #161b22;
   --card-hovor-bg: #1c2129;
-
   --text-color: #c9d1d9;
   --text-muted-color: #7d8590;
   --heading-color: #e6edf3;
-
   --link-color: #4dd0e1;
   --link-underline-color: rgba(77, 208, 225, 0.3);
-
   --main-border-color: #21262d;
   --sidebar-border-color: #21262d;
-
   --highlight-bg-color: #010409;
   --highlighter-rouge-color: #c9d1d9;
   --highlight-lineno-color: #484f58;
   --language-border-color: #21262d;
   --code-header-text-color: #7d8590;
   --code-header-muted-color: #21262d;
-
   --inline-code-bg: rgba(56, 139, 253, 0.1);
-
   --tag-border: rgba(0, 188, 212, 0.3);
   --tag-hover: rgba(0, 188, 212, 0.15);
-
   --topbar-bg: rgba(13, 17, 23, 0.85);
-
   --button-bg: #21262d;
   --btn-border-color: #30363d;
 }
 
-.dark ::-webkit-scrollbar {
+html.dark ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
-.dark ::-webkit-scrollbar-track {
+html.dark ::-webkit-scrollbar-track {
   background: #0d1117;
 }
 
-.dark ::-webkit-scrollbar-thumb {
+html.dark ::-webkit-scrollbar-thumb {
   background: #30363d;
   border-radius: 4px;
 }
 
-.dark ::-webkit-scrollbar-thumb:hover {
+html.dark ::-webkit-scrollbar-thumb:hover {
   background: #484f58;
 }
 
@@ -278,29 +252,28 @@ pre.highlight,
    7. Light mode refinements
    ========================================================================== */
 
-:not(.dark) {
+html:not(.dark) {
   --link-color: var(--accent-color-dark);
-
   --tag-border: rgba(0, 151, 167, 0.3);
   --tag-hover: rgba(0, 188, 212, 0.1);
 }
 
-:not(.dark) ::-webkit-scrollbar-thumb {
+html:not(.dark) ::-webkit-scrollbar-thumb {
   background: #c1c3c5;
   border-radius: 4px;
 }
 
-:not(.dark) ::-webkit-scrollbar-thumb:hover {
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
   background: #a0a0a0;
 }
 
 /* ==========================================================================
-   8. Post-specific tweaks – JetBrains Mono for meta/tags
+   8. Post meta / tags / categories
    ========================================================================== */
 
 .post-meta {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
 }
 
 .post-meta .post-date::before {
@@ -311,7 +284,7 @@ pre.highlight,
 
 .tag {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   border-radius: 4px;
   border-color: var(--tag-border);
   transition: all 0.2s ease;
@@ -325,16 +298,16 @@ pre.highlight,
 
 .categories .list-group-item {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
 }
 
 /* ==========================================================================
-   9. TOC styling
+   9. TOC
    ========================================================================== */
 
 #toc-wrapper {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
 }
 
 #toc-wrapper .toc-link:hover {
@@ -342,14 +315,14 @@ pre.highlight,
 }
 
 /* ==========================================================================
-   10. Blockquote – terminal prompt style
+   10. Blockquote
    ========================================================================== */
 
 .post-content blockquote {
   border-left: 3px solid var(--accent-color);
   background: rgba(0, 188, 212, 0.04);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
 .post-content blockquote::before {
@@ -366,12 +339,12 @@ pre.highlight,
 #post-container .post-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
 }
 
 .post-list-item .post-preview p {
-  font-size: 0.92rem;
-  line-height: 1.6;
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
 
 /* ==========================================================================
@@ -380,11 +353,11 @@ pre.highlight,
 
 footer.blog-footer {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
 }
 
 /* ==========================================================================
-   13. Back-to-top button
+   13. Back-to-top
    ========================================================================== */
 
 #back-to-top {
@@ -392,7 +365,7 @@ footer.blog-footer {
 }
 
 /* ==========================================================================
-   14. Selection color
+   14. Selection
    ========================================================================== */
 
 ::selection {
@@ -401,7 +374,7 @@ footer.blog-footer {
 }
 
 /* ==========================================================================
-   15. Search / topbar
+   15. Topbar / search
    ========================================================================== */
 
 #topbar {
@@ -410,7 +383,7 @@ footer.blog-footer {
 
 #search-input {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .search-btn {
@@ -418,14 +391,14 @@ footer.blog-footer {
 }
 
 /* ==========================================================================
-   16. Tables – terminal grid style
+   16. Tables
    ========================================================================== */
 
 .post-content table {
   border-radius: 6px;
   overflow: hidden;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.85em;
+  font-size: 0.8em;
 }
 
 .post-content table th {
@@ -433,12 +406,12 @@ footer.blog-footer {
   font-weight: 600;
 }
 
-.dark .post-content table th {
+html.dark .post-content table th {
   background-color: rgba(0, 188, 212, 0.12);
 }
 
 /* ==========================================================================
-   17. Avatar border glow
+   17. Avatar
    ========================================================================== */
 
 #avatar {
@@ -451,7 +424,7 @@ footer.blog-footer {
 }
 
 /* ==========================================================================
-   18. Smooth transitions on theme toggle
+   18. Transitions
    ========================================================================== */
 
 #sidebar,
@@ -464,7 +437,7 @@ footer.blog-footer {
 }
 
 /* ==========================================================================
-   19. Mobile responsive tweaks
+   19. Mobile
    ========================================================================== */
 
 @media (max-width: 830px) {
@@ -479,12 +452,11 @@ footer.blog-footer {
 }
 
 /* ==========================================================================
-   20. KBD keys – terminal style
+   20. KBD
    ========================================================================== */
 
 kbd {
-  font-family: 'JetBrains Mono', monospace !important;
-  font-size: 0.82em;
+  font-size: 0.8em;
   background-color: rgba(0, 188, 212, 0.08);
   border: 1px solid rgba(0, 188, 212, 0.2);
   border-radius: 4px;
@@ -492,7 +464,7 @@ kbd {
 }
 
 /* ==========================================================================
-   21. Hyperlinks
+   21. Links in post content
    ========================================================================== */
 
 .post-content a {
@@ -508,17 +480,17 @@ kbd {
 }
 
 /* ==========================================================================
-   22. Page load fade-in
+   22. Page fade-in
    ========================================================================== */
 
 #main {
-  animation: terminal-fade-in 0.4s ease-in-out;
+  animation: terminal-fade-in 0.3s ease-in-out;
 }
 
 @keyframes terminal-fade-in {
   from {
     opacity: 0;
-    transform: translateY(4px);
+    transform: translateY(3px);
   }
   to {
     opacity: 1;

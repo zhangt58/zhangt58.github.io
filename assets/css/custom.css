@@ -207,7 +207,7 @@ div.highlight {
   position: relative;
   border-radius: 4px;
   overflow: auto;
-  margin: 0.4em 0;
+  margin: 0.3em 0;
   border: 1px solid rgba(0, 188, 212, 0.1);
 }
 
@@ -221,10 +221,17 @@ div.highlighter-rouge > table {
   border-collapse: separate;
 }
 
+.highlight > table td,
+.highlight > table th,
+div.highlighter-rouge > table td,
+div.highlighter-rouge > table th {
+  padding: 0 !important;
+}
+
 /* Line numbers gutter */
 .highlight .lineno {
   font-size: 0.75em;
-  padding: 0 0.4em;
+  padding: 0 0.3em;
   border-right: 1px solid var(--language-border-color, rgba(0,0,0,0.1));
   text-align: right;
   user-select: none;
@@ -234,14 +241,14 @@ div.highlighter-rouge > table {
 pre.highlight,
 .highlight pre {
   font-size: 0.78em !important;
-  padding: 0.25em 0.6em;
-  line-height: 1.5 !important;
+  padding: 0.15em 0.5em;
+  line-height: 1.4 !important;
   margin: 0;
 }
 
 /* Language label padding */
 .code-header {
-  padding: 0.2em 0.6em;
+  padding: 0.1em 0.5em;
 }
 
 /* ==========================================================================

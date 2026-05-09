@@ -133,7 +133,7 @@ nothing to commit, working tree clean
 
 ## Images
 
-![Sample image](https://via.placeholder.com/800x400/0d1117/00bcd4?text=Sample+Image)
+![Sample image](https://placehold.co/800x400/0d1117/00bcd4?text=Sample+Image)
 
 *Figure caption with citation*[^1]
 

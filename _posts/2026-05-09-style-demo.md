@@ -2,24 +2,24 @@
 layout: post
 title: Style Demo
 categories: [demo]
-tags: [style, demo]
+tag: [style, demo]
 ---
 
-## H2 Heading – Montserrat Bold, Uppercase
+## H2 Heading
 
-### H3 Heading – Montserrat Bold, Uppercase
+### H3 Heading
 
-#### H4 Heading – Montserrat Bold, Uppercase
+#### H4 Heading
 
-##### H5 Heading – Montserrat Bold, Uppercase
+##### H5 Heading
 
-###### H6 Heading – Montserrat Bold, Uppercase
+###### H6 Heading
 
 ---
 
-## Body Paragraphs – Inter
+## Body Paragraphs
 
-This is a regular body paragraph rendered in **Inter**. It should feel clean and readable, not monospaced.
+This is a regular body paragraph. It should feel clean and readable, not monospaced.
 
 Here's a paragraph with **bold text**, *italic text*, ~~strikethrough~~, and a [hyperlink](https://example.com) to verify link styling with the cyan underline accent.
 
@@ -49,15 +49,15 @@ Term 2
 
 ---
 
-## Inline Code – JetBrains Mono
+## Inline Code
 
-Here is some `inline code` in the middle of a sentence. It should render in **JetBrains Mono** with a subtle cyan-tinted background and border, distinct from the surrounding Inter body text.
+Here is some `inline code` in the middle of a sentence. It should render in JetBrains Mono with a subtle cyan-tinted background and border, distinct from the surrounding body text.
 
 Another example: run `pip install numpy` to install NumPy.
 
 ---
 
-## Code Blocks – JetBrains Mono
+## Code Blocks
 
 ### Python
 
@@ -105,9 +105,9 @@ nothing to commit, working tree clean
 
 ---
 
-## Blockquotes – JetBrains Mono with Prompt
+## Blockquotes
 
-> This is a blockquote. It should render in JetBrains Mono with a cyan left border and a `>` prompt character prepended, giving it a terminal-style feel.
+> This is a blockquote. It should render in JetBrains Mono with a cyan left border and a prompt character prepended.
 
 > Nested or multi-line blockquotes:
 >
@@ -115,7 +115,7 @@ nothing to commit, working tree clean
 
 ---
 
-## Tables – JetBrains Mono
+## Tables
 
 | Method   | Status | Description             |
 |----------|--------|-------------------------|
@@ -141,7 +141,7 @@ nothing to commit, working tree clean
 
 ---
 
-## Keyboard Keys – JetBrains Mono
+## Keyboard Keys
 
 Press `Ctrl` + `C` to copy, `Ctrl` + `V` to paste, and `Esc` to cancel.
 
@@ -168,4 +168,4 @@ URLs can be made in a handful of ways:
 
 ---
 
-*That covers all the visual styles. Headings in **Montserrat Bold/Uppercase**, body in **Inter**, code/meta/tags/TOC/blockquotes/tables in **JetBrains Mono**, with cyan accent throughout.*
+*That covers all the visual styles on the blog — headings in Montserrat Bold/Uppercase, body in Inter, code/meta/tags/TOC/blockquotes/tables in JetBrains Mono, with cyan accent throughout.*

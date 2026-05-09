@@ -7,6 +7,7 @@ category: blog
 tag:
 - python
 - math
+sticky: 1
 ---
 Singular value decomposition, or SVD is useful when the inverse form of an
 matrix is to be figured out. The main approach is

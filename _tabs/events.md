@@ -1,7 +1,7 @@
 ---
 layout: page
 icon: fas fa-calendar-alt
-order: 5
+order: 6
 ---
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />

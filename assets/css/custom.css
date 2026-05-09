@@ -384,49 +384,154 @@ kbd {
 }
 
 /* ==========================================================================
-   18. Compact spacing adjustments
+   18. Compact technical-style post content
    ========================================================================== */
 
-/* Body text in posts */
+/* Body text – JetBrains Mono for technical feel */
 article.post-content,
 .post-content {
-  font-size: 0.88rem !important;
-  line-height: 1.55 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-size: 0.85rem !important;
+  line-height: 1.25 !important;
+  color: var(--text-color);
 }
 
+/* Section headings – terminal prompt style */
 .post-content h2 {
-  margin-top: 1.5em;
-  margin-bottom: 0.6em;
-  font-size: 1.05rem !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-weight: 700;
+  font-size: 0.92rem !important;
+  margin-top: 1.4em;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.25em;
+  border-bottom: 1px solid rgba(0, 188, 212, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent-color);
+}
+
+.post-content h2::before {
+  content: '## ';
+  color: var(--prompt-color);
+  opacity: 0.7;
 }
 
 .post-content h3 {
-  margin-top: 1.2em;
-  margin-bottom: 0.5em;
-  font-size: 0.95rem !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-weight: 600;
+  font-size: 0.85rem !important;
+  margin-top: 1.1em;
+  margin-bottom: 0.4em;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--heading-color);
 }
 
+.post-content h3::before {
+  content: '> ';
+  color: var(--accent-color);
+  opacity: 0.6;
+}
+
+.post-content h4 {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-weight: 600;
+  font-size: 0.82rem !important;
+  margin-top: 1em;
+  margin-bottom: 0.35em;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.post-content h4::before {
+  content: '>> ';
+  color: var(--accent-color);
+  opacity: 0.5;
+}
+
+/* Paragraphs – tight technical prose */
 .post-content p {
-  margin-bottom: 0.7em;
+  margin-bottom: 0.5em;
 }
 
+.post-content p strong {
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.post-content p em {
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* Lists – compact technical bullets */
 .post-content ul,
 .post-content ol {
-  margin-bottom: 0.7em;
-  padding-left: 1.2em;
+  margin-bottom: 0.5em;
+  padding-left: 1em;
 }
 
-.post-content ul li,
+.post-content ul {
+  list-style: none;
+  padding-left: 0.5em;
+}
+
+.post-content ul li {
+  margin-bottom: 0.15em;
+  font-size: 0.84rem !important;
+  padding-left: 0.6em;
+  position: relative;
+}
+
+.post-content ul li::before {
+  content: '▸';
+  position: absolute;
+  left: -0.5em;
+  color: var(--accent-color);
+  opacity: 0.7;
+}
+
+.post-content ol {
+  padding-left: 0.8em;
+}
+
 .post-content ol li {
-  margin-bottom: 0.25em;
-  font-size: 0.85rem !important;
+  margin-bottom: 0.15em;
+  font-size: 0.84rem !important;
+  list-style-type: decimal;
+}
+
+.post-content ol li::marker {
+  color: var(--accent-color);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+}
+
+/* Nested lists */
+.post-content ul ul,
+.post-content ul ol,
+.post-content ol ul,
+.post-content ol ol {
+  margin-top: 0.15em;
+  margin-bottom: 0.15em;
+}
+
+.post-content ul ul li::before {
+  content: '•';
+}
+
+/* Horizontal rules – terminal separator */
+.post-content hr {
+  border: none;
+  border-top: 1px dashed rgba(0, 188, 212, 0.2);
+  margin: 0.8em 0;
 }
 
 /* Home page post previews */
 .post-list-item .post-preview p {
   font-size: 0.82rem !important;
-  line-height: 1.45;
-  margin-bottom: 0.3em;
+  line-height: 1.35;
+  margin-bottom: 0.2em;
 }
 
 /* ==========================================================================

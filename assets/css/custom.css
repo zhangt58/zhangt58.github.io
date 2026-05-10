@@ -1,13 +1,13 @@
 /* ==========================================================================
-   Hybrid theme – custom.css for Chirpy Jekyll blog
+   Quanta Magazine editorial style – custom.css for Chirpy Jekyll blog
    -------------------------------------------------------------------------
-   Montserrat (headings/nav), Inter (body), JetBrains Mono (code/meta).
-   Cyan accent palette, compact layout.
+   Spectral (body/headings), Montserrat (nav/sidebar), JetBrains Mono (code).
+   Wide whitespace, narrow column, drop caps, pull quotes.
    Let Chirpy handle dark/light base theming via CSS variables.
    ========================================================================== */
 
 /* ==========================================================================
-   1. Accent colors
+   1. Accent colors & variables
    ========================================================================== */
 
 :root {
@@ -29,25 +29,12 @@ body {
   font-family: 'Spectral', -apple-system, BlinkMacSystemFont, 'Segoe UI', serif !important;
 }
 
-/* Headings – Montserrat bold uppercase */
-h1, h2, h3, h4, h5, h6 {
+/* Nav/sidebar headings – Montserrat (only outside post content) */
+.site-title,
+#sidebar .nav-link,
+.sidebar-bottom .btn-link,
+.site-subtitle {
   font-family: 'Montserrat', sans-serif !important;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  line-height: 1.3 !important;
-}
-
-h1 { font-weight: 900; }
-
-/* Post titles – Montserrat bold (no uppercase) */
-.post-title,
-h1.post-title {
-  font-family: 'Montserrat', sans-serif !important;
-  font-weight: 700;
-  text-transform: none;
-  letter-spacing: normal;
-  font-size: 1rem !important;
 }
 
 /* Code – JetBrains Mono everywhere */
@@ -63,19 +50,22 @@ tt {
 
 /* Inline code */
 :not(pre) > code {
-  font-size: 0.82em;
+  font-size: 0.85em;
   padding: 0.15em 0.4em;
-  border-radius: 4px;
-  border: 1px solid rgba(0, 188, 212, 0.15);
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.04);
+  border: none;
+}
+
+html.dark :not(pre) > code {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* ==========================================================================
-   3. Sidebar – fonts only, let Chirpy handle colors
+   3. Sidebar – Quanta-style minimal nav
    ========================================================================== */
 
-/* Sidebar title – Montserrat black */
 .site-title {
-  font-family: 'Montserrat', sans-serif !important;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -83,7 +73,6 @@ tt {
 
 /* Sidebar subtitle */
 .site-subtitle {
-  font-family: 'JetBrains Mono', monospace !important;
   font-style: normal;
   font-size: 0.72rem;
   opacity: 0.7;
@@ -91,7 +80,6 @@ tt {
 
 /* Nav links – Montserrat bold uppercase */
 #sidebar .nav-link {
-  font-family: 'Montserrat', sans-serif !important;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -107,15 +95,7 @@ tt {
   background: rgba(0, 188, 212, 0.08);
 }
 
-/* Sidebar bottom buttons */
-.sidebar-bottom .btn-link {
-  color: var(--accent-color-dark);
-}
-
-/* ==========================================================================
-   4. Site title prompt + cursor
-   ========================================================================== */
-
+/* Sidebar title prompt + cursor */
 .site-title::before {
   content: '$ ';
   color: var(--prompt-color);
@@ -139,197 +119,280 @@ tt {
 }
 
 /* ==========================================================================
-   5. Post meta / tags / categories
+   4. ARTICLE PAGES – hide sidebar & TOC, full-width content
    ========================================================================== */
 
-.post-meta {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-}
-
-.post-meta .post-date::before {
-  content: '⟩ ';
-  color: var(--accent-color);
-  opacity: 0.7;
-}
-
-.tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  border-radius: 4px;
-}
-
-.tag:hover {
-  color: var(--accent-color);
-}
-
-.categories .list-group-item {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.78rem;
-}
-
-/* ==========================================================================
-   6. TOC – compact technical terminal style
-   ========================================================================== */
-
-#toc-wrapper {
-  font-family: 'JetBrains Mono', monospace !important;
-  background: rgba(0, 0, 0, 0.03) !important;
-  border: 1px solid rgba(0, 188, 212, 0.15) !important;
-  border-radius: 4px !important;
-}
-
-html.dark #toc-wrapper {
-  background: rgba(0, 0, 0, 0.3) !important;
-  border-color: rgba(0, 188, 212, 0.25) !important;
-}
-
-/* TOC header – terminal prompt */
-#toc-wrapper .panel-heading {
-  font-family: 'JetBrains Mono', monospace !important;
-  font-weight: 700;
-  font-size: 0.68rem !important;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 0.2em 0.6em 0.15em !important;
-  margin-bottom: 0.15em !important;
-  border-bottom: 1px dashed rgba(0, 188, 212, 0.25) !important;
-  color: var(--accent-color) !important;
-  background: transparent !important;
-}
-
-#toc-wrapper .panel-heading::before {
-  content: '⟩ ';
-  color: #4caf50;
-  opacity: 0.9;
-}
-
-/* TOC lists – strip everything */
-#toc-wrapper .toc-list {
-  list-style: none !important;
-  padding-left: 0 !important;
-  margin: 0 !important;
-}
-
-#toc-wrapper .toc-list-item {
-  margin: 0 !important;
-  position: relative;
-}
-
-/* TOC links – terminal tree style */
-#toc-wrapper .toc-link {
-  display: block !important;
-  padding: 0.08em 0.6em !important;
-  font-family: 'JetBrains Mono', monospace !important;
-  font-size: 0.65rem !important;
-  font-weight: 400 !important;
-  line-height: 1.35 !important;
-  text-decoration: none !important;
-  text-transform: none !important;
-  color: var(--text-muted-color) !important;
-  border-left: 2px solid transparent !important;
-  background: transparent !important;
-  transition: all 0.12s ease;
-  white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-}
-
-#toc-wrapper .toc-link::before {
-  content: '├─ ';
-  color: rgba(0, 188, 212, 0.3);
-  margin-right: 0;
-}
-
-#toc-wrapper .toc-link:hover {
-  color: var(--accent-color) !important;
-  border-left-color: var(--accent-color) !important;
-  background: rgba(0, 188, 212, 0.04) !important;
-  padding-left: 0.8em !important;
-}
-
-#toc-wrapper .toc-link:hover::before {
-  color: var(--accent-color);
-}
-
-/* Active link – highlighted */
-#toc-wrapper .is-active-link {
-  color: var(--accent-color) !important;
-  border-left-color: var(--accent-color) !important;
-  font-weight: 700 !important;
-  background: rgba(0, 188, 212, 0.06) !important;
-}
-
-#toc-wrapper .is-active-link::before {
-  content: '└▸ ';
-  color: var(--accent-color);
-}
-
-/* H2 level – slightly larger, bold */
-#toc-wrapper .node-name--H2 {
-  font-size: 0.68rem !important;
-  font-weight: 600 !important;
-  color: var(--text-color) !important;
-}
-
-/* H3 level */
-#toc-wrapper .node-name--H3 {
-  font-size: 0.63rem !important;
-}
-
-/* H4 level */
-#toc-wrapper .node-name--H4 {
-  font-size: 0.6rem !important;
-}
-
-/* Nested list indentation */
-#toc-wrapper .toc-list .toc-list {
-  margin-left: 0.8em !important;
-  border-left: 1px solid rgba(0, 188, 212, 0.08) !important;
-  padding-left: 0 !important;
-}
-
-#toc-wrapper .toc-list .toc-list .toc-link::before {
-  content: '│ ├─ ';
-}
-
-#toc-wrapper .toc-list .toc-list .is-active-link::before {
-  content: '│ └▸ ';
-}
-
-/* Deep nesting */
-#toc-wrapper .toc-list .toc-list .toc-list .toc-link::before {
-  content: '│ │ ├─ ';
-}
-
-/* Collapse/expand buttons – hide for clean look */
-#toc-wrapper .toc-collapse-btn {
+/* On post pages, collapse sidebar */
+.page[data-layout="post"] #sidebar,
+.page[data-layout="post"] .sidebar-sticky {
   display: none !important;
 }
 
-#toc-wrapper .toc-list.is-collapsible {
-  display: block !important;
+/* Hide TOC on post pages */
+.page[data-layout="post"] #toc-wrapper,
+.page[data-layout="post"] #panel-wrapper {
+  display: none !important;
+}
+
+/* Expand main content to center */
+.page[data-layout="post"] #main-wrapper {
+  max-width: 740px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.page[data-layout="post"] #post-container {
+  max-width: 100% !important;
 }
 
 /* ==========================================================================
-   7. Blockquote
+   5. Post header – Quanta Magazine style
    ========================================================================== */
 
-.post-content blockquote {
-  border-left-color: var(--accent-color) !important;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.82em;
+/* Category tag above title */
+.post-categories {
+  margin-bottom: 0.5em;
 }
 
-.post-content blockquote::before {
-  content: '>';
-  font-weight: 700;
-  color: var(--accent-color);
+.post-categories .category-list-item {
+  font-family: 'Spectral', serif !important;
+  font-size: 0.75rem !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted-color) !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
   margin-right: 0.5em;
 }
 
+/* Post title – large, editorial */
+#post-container .post-title,
+h1.post-title {
+  font-family: 'Spectral', serif !important;
+  font-weight: 800;
+  font-size: 2rem !important;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  text-transform: none !important;
+  margin-bottom: 0.6em;
+}
+
+/* Post meta / byline – elegant */
+.post-meta {
+  font-family: 'Spectral', serif !important;
+  font-size: 0.9rem !important;
+  font-weight: 400;
+  color: var(--text-muted-color) !important;
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+  padding-bottom: 1.5em;
+}
+
+.post-meta .author {
+  font-weight: 600;
+  color: var(--text-color) !important;
+}
+
+.post-meta .post-date {
+  color: var(--text-muted-color) !important;
+}
+
+.post-meta .post-date::before {
+  content: '';
+}
+
+/* Tags under meta – clean */
+.post-tags {
+  margin-top: 0.5em;
+}
+
+.post-tags .tag {
+  font-family: 'Spectral', serif !important;
+  font-size: 0.78rem !important;
+  border-radius: 3px !important;
+  border-color: rgba(128, 128, 128, 0.2) !important;
+  color: var(--text-muted-color) !important;
+  padding: 0.15em 0.5em !important;
+}
+
+.post-tags .tag:hover {
+  color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+}
+
 /* ==========================================================================
-   8. Code blocks – JetBrains Mono, let Chirpy handle light/dark colors
+   6. Post content – Quanta editorial typography
+   ========================================================================== */
+
+/* Body text */
+.post-content {
+  font-family: 'Spectral', serif;
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0.01em;
+}
+
+.post-content p {
+  margin-bottom: 1.3em;
+}
+
+/* Drop cap on first paragraph */
+.post-content > p:first-of-type::first-letter {
+  font-family: 'Spectral', serif;
+  font-weight: 800;
+  font-size: 3.8em;
+  float: left;
+  line-height: 0.75;
+  margin-right: 0.06em;
+  margin-top: 0.05em;
+  color: var(--text-color);
+}
+
+/* Headings – editorial serif, no uppercase */
+.post-content h2 {
+  font-family: 'Spectral', serif !important;
+  font-weight: 700;
+  font-size: 1.4rem !important;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-transform: none !important;
+  margin-top: 2.5em;
+  margin-bottom: 0.8em;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.post-content h3 {
+  font-family: 'Spectral', serif !important;
+  font-weight: 600;
+  font-size: 1.2rem !important;
+  line-height: 1.35;
+  text-transform: none !important;
+  margin-top: 2em;
+  margin-bottom: 0.7em;
+}
+
+.post-content h4 {
+  font-family: 'Spectral', serif !important;
+  font-weight: 600;
+  font-size: 1.08rem !important;
+  line-height: 1.4;
+  text-transform: none !important;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+/* Remove anchor links from headings for clean look */
+.post-content h2 .anchor-link,
+.post-content h3 .anchor-link,
+.post-content h4 .anchor-link {
+  display: none;
+}
+
+/* ==========================================================================
+   7. Blockquotes – Quanta pull quote style
+   ========================================================================== */
+
+.post-content blockquote {
+  font-family: 'Spectral', serif;
+  font-size: 1.15rem !important;
+  font-style: italic;
+  line-height: 1.6;
+  padding: 0.8em 0 0.8em 1.5em;
+  margin: 2em 0;
+  border-left: 3px solid var(--text-color);
+  color: var(--text-color);
+  opacity: 0.85;
+  background: none !important;
+  border-left-color: var(--text-color) !important;
+}
+
+.post-content blockquote::before {
+  content: none;
+}
+
+.post-content blockquote p {
+  margin-bottom: 0.5em;
+  font-size: inherit !important;
+}
+
+.post-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   8. Lists
+   ========================================================================== */
+
+.post-content ul,
+.post-content ol {
+  margin-bottom: 1.3em;
+  padding-left: 1.5em;
+}
+
+.post-content ul li,
+.post-content ol li {
+  margin-bottom: 0.35em;
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
+}
+
+/* ==========================================================================
+   9. Images – full-width within content
+   ========================================================================== */
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+
+.post-content figure {
+  margin: 2em 0;
+}
+
+.post-content figure img {
+  margin-bottom: 0.5em;
+}
+
+.post-content figcaption {
+  font-family: 'Spectral', serif;
+  font-size: 0.82rem !important;
+  color: var(--text-muted-color);
+  text-align: right;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   10. Links in post content – subtle underline
+   ========================================================================== */
+
+.post-content a {
+  color: var(--accent-color);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 188, 212, 0.25);
+  transition: border-color 0.2s ease;
+}
+
+.post-content a:hover {
+  color: var(--accent-color-light);
+  border-bottom-color: var(--accent-color-light);
+}
+
+/* ==========================================================================
+   11. Horizontal rule – elegant separator
+   ========================================================================== */
+
+.post-content hr {
+  border: none;
+  border-top: 1px solid rgba(128, 128, 128, 0.15);
+  margin: 2.5em 0;
+}
+
+/* ==========================================================================
+   12. Code blocks – clean
    ========================================================================== */
 
 div.highlighter-rouge,
@@ -337,12 +400,17 @@ div.highlight {
   position: relative;
   border-radius: 4px;
   overflow: auto;
-  margin: 0;
-  border: 1px solid rgba(0, 188, 212, 0.1);
+  margin: 1.5em 0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+html.dark div.highlighter-rouge,
+html.dark div.highlight {
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 figure.highlight {
-  margin: 0;
+  margin: 1.5em 0;
 }
 
 .highlight > table,
@@ -358,182 +426,131 @@ div.highlighter-rouge > table th {
   padding: 0 !important;
 }
 
-/* Line numbers gutter */
 .highlight .lineno {
   font-size: 0.75em;
   padding: 0 0.3em;
-  border-right: 1px solid var(--language-border-color, rgba(0,0,0,0.1));
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
   text-align: right;
   user-select: none;
 }
 
-/* Code font size */
 pre.highlight,
 .highlight pre {
-  font-size: 0.9em !important;
-  padding: 0 0.5em;
-  line-height: 1.3 !important;
+  font-size: 0.88em !important;
+  padding: 0.8em 0.6em;
+  line-height: 1.45 !important;
   margin: 0;
 }
 
-/* Language label padding */
 .code-header {
-  padding: 0.1em 0.5em;
+  padding: 0.2em 0.5em;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 /* ==========================================================================
-   9. Post content – Quanta Magazine editorial style
+   13. Tables
    ========================================================================== */
 
-/* Narrow centered content column */
-#post-container {
-  max-width: 720px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-#post-container .post-title {
+.post-content table {
+  border-radius: 4px;
+  overflow: hidden;
   font-family: 'Spectral', serif;
-  font-weight: 800;
-  font-size: 1.6rem !important;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
-  text-transform: none;
+  font-size: 0.9rem;
+  margin: 1.5em 0;
 }
 
-/* Elegant post meta / byline */
-.post-meta {
-  font-family: 'Spectral', serif;
-  font-size: 0.85rem !important;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-}
-
-.post-meta .author {
+.post-content table th {
   font-weight: 600;
-}
-
-/* Drop cap on first paragraph of each post */
-.post-content > p:first-of-type::first-letter {
-  font-family: 'Spectral', serif;
-  font-weight: 800;
-  font-size: 3.4em;
-  float: left;
-  line-height: 0.8;
-  margin-right: 0.08em;
-  margin-top: 0.05em;
-  color: var(--text-color);
-}
-
-/* Headings – editorial, not terminal */
-.post-content h2 {
-  font-family: 'Spectral', serif;
-  font-weight: 700;
-  font-size: 1.35rem !important;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-  text-transform: none;
-  margin-top: 2.2em;
-  margin-bottom: 0.7em;
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-.post-content h3 {
-  font-family: 'Spectral', serif;
-  font-weight: 600;
-  font-size: 1.15rem !important;
-  line-height: 1.35;
-  text-transform: none;
-  margin-top: 1.8em;
-  margin-bottom: 0.6em;
-}
-
-.post-content h4 {
-  font-family: 'Spectral', serif;
-  font-weight: 600;
-  font-size: 1.05rem !important;
-  line-height: 1.4;
-  text-transform: none;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-/* Blockquotes – Quanta-style pull quotes */
-.post-content blockquote {
-  font-family: 'Spectral', serif;
-  font-size: 1.15rem !important;
-  font-style: italic;
-  line-height: 1.6;
-  padding: 0.8em 0 0.8em 1.5em;
-  margin: 1.8em 0;
-  border-left: 3px solid var(--text-color);
-  color: var(--text-color);
-  opacity: 0.9;
-  background: none !important;
-}
-
-.post-content blockquote p {
-  margin-bottom: 0.5em;
-  font-size: inherit !important;
-}
-
-.post-content blockquote p:last-child {
-  margin-bottom: 0;
-}
-
-/* Body text – generous, readable */
-.post-content {
-  font-family: 'Spectral', serif;
-  font-size: 1.05rem !important;
-  line-height: 1.7 !important;
-  letter-spacing: 0.01em;
-}
-
-.post-content p {
-  margin-bottom: 1.2em;
-}
-
-.post-content ul,
-.post-content ol {
-  margin-bottom: 1.2em;
-  padding-left: 1.5em;
-}
-
-.post-content ul li,
-.post-content ol li {
-  margin-bottom: 0.35em;
-  font-size: 1rem !important;
-  line-height: 1.65 !important;
-}
-
-/* Smooth cyan links in content */
-.post-content a {
-  color: var(--accent-color);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(0, 188, 212, 0.3);
-  transition: border-color 0.2s ease;
-}
-
-.post-content a:hover {
-  color: var(--accent-color-light);
-  border-bottom-color: var(--accent-color-light);
-}
-
-/* Horizontal rule – elegant */
-.post-content hr {
-  border: none;
-  border-top: 1px solid rgba(128, 128, 128, 0.2);
-  margin: 2.5em 0;
-}
-
-/* Post card spacing */
-.post-list-item {
-  padding: 1em 0 !important;
 }
 
 /* ==========================================================================
-   10. Right panel (recently updated, trending tags)
+   14. TOC – Quanta-style (minimal, only on non-post pages)
+   ========================================================================== */
+
+#toc-wrapper {
+  font-family: 'Spectral', serif !important;
+}
+
+#toc-wrapper .panel-heading {
+  font-family: 'Spectral', serif !important;
+  font-weight: 700;
+  font-size: 0.7rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.3em 0.5em !important;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+  margin-bottom: 0.3em !important;
+}
+
+#toc-wrapper .panel-heading::before {
+  content: none;
+}
+
+#toc-wrapper .toc-list {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
+
+#toc-wrapper .toc-link {
+  display: block !important;
+  padding: 0.12em 0 !important;
+  font-family: 'Spectral', serif !important;
+  font-size: 0.72rem !important;
+  line-height: 1.4 !important;
+  text-decoration: none !important;
+  border-left: none !important;
+  background: transparent !important;
+  color: var(--text-muted-color) !important;
+  transition: color 0.15s ease;
+}
+
+#toc-wrapper .toc-link::before {
+  content: none;
+}
+
+#toc-wrapper .toc-link:hover {
+  color: var(--text-color) !important;
+  padding-left: 0 !important;
+}
+
+#toc-wrapper .is-active-link {
+  color: var(--text-color) !important;
+  font-weight: 600 !important;
+  border-left: none !important;
+}
+
+#toc-wrapper .node-name--H2 {
+  font-weight: 600 !important;
+  color: var(--text-color) !important;
+}
+
+#toc-wrapper .node-name--H3 {
+  padding-left: 0.8em !important;
+}
+
+#toc-wrapper .node-name--H4 {
+  padding-left: 1.4em !important;
+}
+
+/* ==========================================================================
+   15. Home page post list
+   ========================================================================== */
+
+.post-list-item {
+  padding: 1.2em 0 !important;
+}
+
+.post-list-item .post-preview p {
+  font-size: 0.92rem !important;
+  line-height: 1.55;
+  margin-bottom: 0.4em;
+}
+
+/* ==========================================================================
+   16. Right panel (recently updated, trending tags)
    ========================================================================== */
 
 #panel-wrapper .card,
@@ -551,14 +568,13 @@ pre.highlight,
   letter-spacing: 0.03em;
 }
 
-/* Tag cloud */
 #access-tags .tag {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.72rem;
 }
 
 /* ==========================================================================
-   11. Footer
+   17. Footer
    ========================================================================== */
 
 footer.blog-footer {
@@ -567,7 +583,7 @@ footer.blog-footer {
 }
 
 /* ==========================================================================
-   12. Search
+   18. Search
    ========================================================================== */
 
 #search-input {
@@ -580,22 +596,7 @@ footer.blog-footer {
 }
 
 /* ==========================================================================
-   13. Tables
-   ========================================================================== */
-
-.post-content table {
-  border-radius: 6px;
-  overflow: hidden;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.78em;
-}
-
-.post-content table th {
-  font-weight: 600;
-}
-
-/* ==========================================================================
-   14. Avatar
+   19. Avatar
    ========================================================================== */
 
 #avatar {
@@ -607,7 +608,7 @@ footer.blog-footer {
 }
 
 /* ==========================================================================
-   15. KBD
+   20. KBD
    ========================================================================== */
 
 kbd {
@@ -616,30 +617,14 @@ kbd {
 }
 
 /* ==========================================================================
-   16. Links in post content
-   ========================================================================== */
-
-.post-content a {
-  color: var(--accent-color);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(0, 188, 212, 0.3);
-  transition: border-color 0.2s ease;
-}
-
-.post-content a:hover {
-  color: var(--accent-color-light);
-  border-bottom-color: var(--accent-color-light);
-}
-
-/* ==========================================================================
-   17. Page fade-in
+   21. Page fade-in
    ========================================================================== */
 
 #main {
-  animation: terminal-fade-in 0.3s ease-in-out;
+  animation: page-fade-in 0.3s ease-in-out;
 }
 
-@keyframes terminal-fade-in {
+@keyframes page-fade-in {
   from {
     opacity: 0;
     transform: translateY(3px);
@@ -651,31 +636,42 @@ kbd {
 }
 
 /* ==========================================================================
-   18. Home page post previews
-   ========================================================================== */
-
-.post-list-item .post-preview p {
-  font-size: 0.82rem !important;
-  line-height: 1.45;
-  margin-bottom: 0.3em;
-}
-
-/* ==========================================================================
-   19. Mobile
-   ========================================================================== */
-
-@media (max-width: 830px) {
-  .site-title::before {
-    content: '> ';
-  }
-}
-
-/* ==========================================================================
-   20. Transitions for theme switching
+   22. Transitions for theme switching
    ========================================================================== */
 
 #sidebar,
 #main,
 .post-content {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ==========================================================================
+   23. Mobile
+   ========================================================================== */
+
+@media (max-width: 830px) {
+  .site-title::before {
+    content: '> ';
+  }
+
+  /* Show sidebar on mobile post pages */
+  .page[data-layout="post"] #sidebar {
+    display: block !important;
+  }
+
+  .page[data-layout="post"] #main-wrapper {
+    max-width: 100% !important;
+  }
+
+  #post-container .post-title {
+    font-size: 1.5rem !important;
+  }
+
+  .post-content {
+    font-size: 1rem !important;
+  }
+
+  .post-content > p:first-of-type::first-letter {
+    font-size: 3em;
+  }
 }

@@ -382,12 +382,149 @@ pre.highlight,
 }
 
 /* ==========================================================================
-   9. Home page post list
+   9. Post content – Quanta Magazine editorial style
    ========================================================================== */
 
+/* Narrow centered content column */
+#post-container {
+  max-width: 720px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 #post-container .post-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Spectral', serif;
+  font-weight: 800;
+  font-size: 1.6rem !important;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+/* Elegant post meta / byline */
+.post-meta {
+  font-family: 'Spectral', serif;
+  font-size: 0.85rem !important;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.post-meta .author {
+  font-weight: 600;
+}
+
+/* Drop cap on first paragraph of each post */
+.post-content > p:first-of-type::first-letter {
+  font-family: 'Spectral', serif;
+  font-weight: 800;
+  font-size: 3.4em;
+  float: left;
+  line-height: 0.8;
+  margin-right: 0.08em;
+  margin-top: 0.05em;
+  color: var(--text-color);
+}
+
+/* Headings – editorial, not terminal */
+.post-content h2 {
+  font-family: 'Spectral', serif;
   font-weight: 700;
+  font-size: 1.35rem !important;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  margin-top: 2.2em;
+  margin-bottom: 0.7em;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.post-content h3 {
+  font-family: 'Spectral', serif;
+  font-weight: 600;
+  font-size: 1.15rem !important;
+  line-height: 1.35;
+  text-transform: none;
+  margin-top: 1.8em;
+  margin-bottom: 0.6em;
+}
+
+.post-content h4 {
+  font-family: 'Spectral', serif;
+  font-weight: 600;
+  font-size: 1.05rem !important;
+  line-height: 1.4;
+  text-transform: none;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Blockquotes – Quanta-style pull quotes */
+.post-content blockquote {
+  font-family: 'Spectral', serif;
+  font-size: 1.15rem !important;
+  font-style: italic;
+  line-height: 1.6;
+  padding: 0.8em 0 0.8em 1.5em;
+  margin: 1.8em 0;
+  border-left: 3px solid var(--text-color);
+  color: var(--text-color);
+  opacity: 0.9;
+  background: none !important;
+}
+
+.post-content blockquote p {
+  margin-bottom: 0.5em;
+  font-size: inherit !important;
+}
+
+.post-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Body text – generous, readable */
+.post-content {
+  font-family: 'Spectral', serif;
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0.01em;
+}
+
+.post-content p {
+  margin-bottom: 1.2em;
+}
+
+.post-content ul,
+.post-content ol {
+  margin-bottom: 1.2em;
+  padding-left: 1.5em;
+}
+
+.post-content ul li,
+.post-content ol li {
+  margin-bottom: 0.35em;
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
+}
+
+/* Smooth cyan links in content */
+.post-content a {
+  color: var(--accent-color);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 188, 212, 0.3);
+  transition: border-color 0.2s ease;
+}
+
+.post-content a:hover {
+  color: var(--accent-color-light);
+  border-bottom-color: var(--accent-color-light);
+}
+
+/* Horizontal rule – elegant */
+.post-content hr {
+  border: none;
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+  margin: 2.5em 0;
 }
 
 /* Post card spacing */
@@ -514,45 +651,9 @@ kbd {
 }
 
 /* ==========================================================================
-   18. Compact spacing adjustments
+   18. Home page post previews
    ========================================================================== */
 
-/* Body text in posts */
-article.post-content,
-.post-content {
-  font-size: 0.88rem !important;
-  line-height: 1.55 !important;
-}
-
-.post-content h2 {
-  margin-top: 1.5em;
-  margin-bottom: 0.6em;
-  font-size: 1.05rem !important;
-}
-
-.post-content h3 {
-  margin-top: 1.2em;
-  margin-bottom: 0.5em;
-  font-size: 0.95rem !important;
-}
-
-.post-content p {
-  margin-bottom: 0.7em;
-}
-
-.post-content ul,
-.post-content ol {
-  margin-bottom: 0.7em;
-  padding-left: 1.2em;
-}
-
-.post-content ul li,
-.post-content ol li {
-  margin-bottom: 0.25em;
-  font-size: 0.85rem !important;
-}
-
-/* Home page post previews */
 .post-list-item .post-preview p {
   font-size: 0.82rem !important;
   line-height: 1.45;

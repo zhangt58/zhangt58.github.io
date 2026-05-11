@@ -138,6 +138,33 @@
             font-weight: 700;
             color: var(--text-heading);
             line-height: 1.2;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .open-new-tab-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .open-new-tab-btn:hover {
+            border-color: var(--accent);
+            color: var(--text-primary);
+            background: var(--bg-filter-hover);
+            box-shadow: 0 0 0 2px var(--accent-glow);
         }
 
         .brand-text .subtitle {
@@ -532,7 +559,7 @@
             <div class="brand">
                 <div class="brand-icon">🗺️</div>
                 <div class="brand-text">
-                    <h1>Mid Michigan & Lake Michigan Events</h1>
+                    <h1>Mid Michigan & Lake Michigan Events<a class="open-new-tab-btn" href="mi_events.html" target="_blank" title="Open in new tab">&#x2197;</a></h1>
                     <div class="subtitle">109 Events Across 5 Regions — May 2026</div>
                 </div>
             </div>

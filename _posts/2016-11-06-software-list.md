@@ -9,6 +9,7 @@ tag:
 - programming
 - computer
 sticky: 2
+hidden: true
 ---
 When I was working at the linear accelerator driven free-electron laser facility, I've
 developed a lot of different software to do the machine commissioning/operation, numerical simulation/modeling, etc. Each one below could be the name of the software project,

@@ -5,5 +5,5 @@ icon: fas fa-diagram-project
 order: 7
 ---
 
-- [Eat at State - Simplified](https://zhangt58.github.io/eatatstate/)
+- [Eat at State - Simplified](https://eatatstate.github.io/menu/)
 - [IndicoDataFusion](https://indicodatafusion.github.io/IDF-App)
